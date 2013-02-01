@@ -15,7 +15,7 @@ public class inssetairlinesOpenHelper extends SQLiteOpenHelper {
 	private static final String DATABASE_NAME = "inssetairlines.db";
 
 	// Nom de la table de maintenance
-	private static final String DATABASE_TABLE = "maintenance";
+	public static final String DATABASE_TABLE = "maintenance";
 	
 	// Description des colonnes
 	public static final String COLUMN_ID_MAINTENANCE = "id_maintenance";
@@ -36,10 +36,10 @@ public class inssetairlinesOpenHelper extends SQLiteOpenHelper {
 	// Requête SQL de création de la base
 	public static final String REQUETE_CREATION_BDD = "create table " + DATABASE_TABLE + " (" + COLUMN_ID_MAINTENANCE 
 			+ " integer primary key autoincrement, " + COLUMN_IMMATRICULATION + " text not null, " + COLUMN_DATE_PREVUE + " text not null, " 
-			+ COLUMN_DATE_EFF + " text not null, " + COLUMN_DUREE_PREVUE + " text not null, " + COLUMN_DUREE_EFF + " text not null, " 
-			+ COLUMN_NOTES + " text not null);";
+			+ COLUMN_DATE_EFF + " text, " + COLUMN_DUREE_PREVUE + " text not null, " + COLUMN_DUREE_EFF + " text, " 
+			+ COLUMN_NOTES + " text);";
 	
-	public inssetairlinesOpenHelper(Context context, String name, CursorFactory factory, int version) {
+	public inssetairlinesOpenHelper(Context context, CursorFactory factory) {
 		super(context, DATABASE_NAME, factory, DATABASE_VERSION);
 		// TODO Auto-generated constructor stub
 	}
@@ -58,8 +58,6 @@ public class inssetairlinesOpenHelper extends SQLiteOpenHelper {
 			db.execSQL("DROP TABLE IF IT EXISTS " + DATABASE_TABLE);
 			onCreate(db);
 		}
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub		
 	}
-
 }
