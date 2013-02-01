@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="10dip"
+        android:text="@string/immatriculation"
+        android:textSize="17sp" />
+    
+	<EditText android:id="@+id/immatriculation"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_margin="5dip"
+	    android:layout_marginBottom="15dip"
+	    android:singleLine="true" 
+	    android:inputType="text" />
+
+	<TextView
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingLeft="10dip"
+	    android:paddingRight="10dip"
+	    android:paddingTop="10dip"
+	    android:text="@string/date_prevue"
+	    android:textSize="17sp" />
+    
+	<EditText android:id="@+id/date_prevue" 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_margin="5dip"
+	    android:layout_marginBottom="15dip"
+	    android:singleLine="true"
+	    android:inputType="date" />"
+	
+	<TextView
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingLeft="10dip"
+	    android:paddingRight="10dip"
+	    android:paddingTop="10dip"
+	    android:text="@string/duree_prevue"
+	    android:textSize="17sp" />
+
+	<EditText
+	    android:id="@+id/duree_prevue"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_margin="5dip"
+	    android:layout_marginBottom="15dip"
+	    android:ems="10"
+	    android:inputType="numberDecimal"
+	    android:singleLine="true" >
+
+	    <requestFocus />
+	</EditText>
+	
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="10dip"
+        android:text="@string/notes"
+        android:textSize="17sp" />
+    
+	<EditText android:id="@+id/notes" 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_margin="5dip"
+	    android:layout_marginBottom="15dip"
+	    android:lines="4"
+	    android:gravity="top" />
+	
+	<LinearLayout android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal">
+
+		<Button
+	    	android:id="@+id/buttonSave"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:text="@string/buttonSauvegarder"
+	    	android:layout_weight="1" />
+		
+		<Button
+		    android:id="@+id/buttonDemarrer"
+		    android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:text="@string/buttonDemarrer"
+	    	android:layout_weight="1" />
+	</LinearLayout>	
+</LinearLayout>

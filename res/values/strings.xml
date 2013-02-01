@@ -6,5 +6,11 @@
     <string name="buttonListeMaintenances">Liste des maintenances</string>
     <string name="title_activity_liste_maintenances">Liste des maintenances</string>
     <string name="buttonQuitter">Quitter</string>
+    <string name="buttonSauvegarder">Sauvegarder</string>
+    <string name="immatriculation">Immatriculation</string>
+    <string name="date_prevue">Date prévue</string>
+    <string name="duree_prevue">Durée prévue</string>
+    <string name="notes">Notes</string>
+    <string name="buttonDemarrer">Démarrer</string>
 
 </resources>

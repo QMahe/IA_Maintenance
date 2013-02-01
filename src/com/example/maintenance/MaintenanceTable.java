@@ -90,4 +90,15 @@ public class MaintenanceTable extends Table {
         contentValues.put(inssetairlinesOpenHelper.COLUMN_NOTES, entite.getNotes());
         maBDD.insert(inssetairlinesOpenHelper.DATABASE_TABLE, null, contentValues);
     }
+    
+	public void Update(Maintenance entite) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(inssetairlinesOpenHelper.COLUMN_IMMATRICULATION, entite.getImmatriculation());
+        contentValues.put(inssetairlinesOpenHelper.COLUMN_DATE_PREVUE, entite.getDatePrevue());
+        contentValues.put(inssetairlinesOpenHelper.COLUMN_DATE_EFF, entite.getDateEff());
+        contentValues.put(inssetairlinesOpenHelper.COLUMN_DUREE_PREVUE, entite.getDureePrevue());
+        contentValues.put(inssetairlinesOpenHelper.COLUMN_DUREE_EFF, entite.getDureeEff());
+        contentValues.put(inssetairlinesOpenHelper.COLUMN_NOTES, entite.getNotes());
+        maBDD.update(inssetairlinesOpenHelper.DATABASE_TABLE, contentValues, inssetairlinesOpenHelper.COLUMN_ID_MAINTENANCE + "=?", new String[] { String.valueOf(entite.getId()) });
+    }
 }
