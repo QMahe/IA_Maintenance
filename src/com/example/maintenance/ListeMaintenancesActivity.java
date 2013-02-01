@@ -1,6 +1,7 @@
 package com.example.maintenance;
 
 import java.util.ArrayList;
+import java.sql.Date;
 
 import android.app.ListActivity;
 import android.os.Bundle;
@@ -29,7 +30,11 @@ public class ListeMaintenancesActivity extends ListActivity {
 		if (maintenances.size() > 0) {
 			String[] tabMaintenance = new String[maintenances.size()];
 			int id = 0;
-			for (Maintenance m : maintenances) { tabMaintenance[id++] = m.getImmatriculation()+" - "+m.getDatePrevue(); }
+			for (Maintenance m : maintenances) {
+				long timestamp = Long.parseLong(m.getDatePrevue());
+				Date date = new Date(timestamp * 1000);
+				tabMaintenance[id++] = m.getImmatriculation()+" - "+date;
+			}
 			ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item, tabMaintenance);
 			liste.setAdapter(adapter);
 		}

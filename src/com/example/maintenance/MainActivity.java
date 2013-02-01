@@ -39,9 +39,9 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		receptionMaintenances();
-		setContentView(R.layout.activity_main);		
-		// checkDataBase();
+		checkDataBase();
+		setContentView(R.layout.activity_main);
+		
 		
 		this.listMaintenances = (Button) findViewById(R.id.buttonListMaintenances);
 		this.quitter = (Button) findViewById(R.id.buttonQuitter);
@@ -76,12 +76,9 @@ public class MainActivity extends Activity {
 	    try {
 	        checkDB = SQLiteDatabase.openDatabase("/data/data/com.example.maintenance/databases/inssetairlines.db", null, SQLiteDatabase.OPEN_READONLY);
 	        checkDB.close();
-	        String suc = "La BDD existe";
-	        Toast.makeText(MainActivity.this, suc, Toast.LENGTH_SHORT).show();
 	    } catch (SQLiteException e) {
 	        // base de données n'existe pas.
-	    	String exc = "La BDD n'existe pas";
-	    	Toast.makeText(MainActivity.this, exc, Toast.LENGTH_SHORT).show();
+	    	receptionMaintenances();
 	    }
 	    return checkDB != null ? true : false;
 	}
@@ -154,6 +151,7 @@ public class MainActivity extends Activity {
 		Log.i("test","4");
 		maintenanceTable.Close();
 		Log.i("test","5");
-    	// Toast.makeText(MainActivity.this, maintenance.getId().toString(), Toast.LENGTH_SHORT).show();		
+    	// Toast.makeText(MainActivity.this, maintenance.getId().toString(), Toast.LENGTH_SHORT).show();
+		// finish();
 	}
 }
